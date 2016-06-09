@@ -57,7 +57,8 @@
     <instance objName="obj_wall_back" x="0" y="32" name="inst_8D817955" locked="0" code="" scaleX="1" scaleY="20" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_back" x="1248" y="32" name="inst_48AAAE5A" locked="0" code="" scaleX="1" scaleY="20" colour="4294967295" rotation="0"/>
     <instance objName="obj_paddle_cpu" x="1216" y="352" name="inst_491292F8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_ball" x="608" y="320" name="inst_EB0A20A1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_ball" x="641" y="338" name="inst_F819E4F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_score" x="480" y="64" name="inst_9EB39437" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
