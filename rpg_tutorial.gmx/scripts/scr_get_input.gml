@@ -11,6 +11,9 @@ xaxis = (right_key - left_key);
 yaxis = (down_key - up_key);
 
 // Check for gamepad input
+
+// commented out temporarilty
+/*
 if (gamepad_is_connected(0)) 
 {
     gamepad_set_axis_deadzone(0, 0.35);
@@ -19,3 +22,5 @@ if (gamepad_is_connected(0))
     dash_key = gamepad_button_check_pressed(0, gp_face1);
     attack_key = gamepad_button_check_pressed(0, gp_face3);
 }
+
+*/

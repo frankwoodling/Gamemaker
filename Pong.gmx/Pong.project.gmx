@@ -9,6 +9,7 @@
     <sprite>sprites\spr_paddle</sprite>
     <sprite>sprites\spr_paddle_cpu</sprite>
     <sprite>sprites\spr_wall</sprite>
+    <sprite>sprites\spr_ball</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_main</background>
@@ -22,6 +23,7 @@
     <object>objects\obj_wall</object>
     <object>objects\obj_wall_back</object>
     <object>objects\obj_paddle_cpu</object>
+    <object>objects\obj_ball</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main</room>
