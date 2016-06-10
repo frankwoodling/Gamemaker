@@ -114,6 +114,7 @@ if(x &gt;= room_width)
           <argument>
             <kind>1</kind>
             <string>hspeed *= -1;
+audio_play_sound(snd_ball_hit,0,0);
 </string>
           </argument>
         </arguments>
@@ -137,6 +138,7 @@ if(x &gt;= room_width)
           <argument>
             <kind>1</kind>
             <string>hspeed *= -1;
+audio_play_sound(snd_ball_hit,0,0);
 </string>
           </argument>
         </arguments>

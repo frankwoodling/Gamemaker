@@ -4,13 +4,22 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_ball_hit</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_paddle</sprite>
     <sprite>sprites\spr_paddle_cpu</sprite>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_ball</sprite>
     <sprite>sprites\spr_center_line</sprite>
+    <sprites name="Start Menu">
+      <sprite>sprites\spr_start</sprite>
+      <sprite>sprites\spr_options</sprite>
+      <sprite>sprites\spr_exit</sprite>
+      <sprite>sprites\spr_back</sprite>
+      <sprite>sprites\spr_cursor</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_main</background>
@@ -18,6 +27,7 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_get_input.gml</script>
+    <script>scripts\scr_menu_buttons.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_score</font>
@@ -29,8 +39,17 @@
     <object>objects\obj_paddle_cpu</object>
     <object>objects\obj_ball</object>
     <object>objects\obj_score</object>
+    <objects name="Start Menu">
+      <object>objects\obj_cursor</object>
+      <object>objects\obj_start</object>
+      <object>objects\obj_options</object>
+      <object>objects\obj_exit</object>
+      <object>objects\obj_back</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_menu_start</room>
+    <room>rooms\rm_options</room>
     <room>rooms\rm_main</room>
   </rooms>
   <help>
