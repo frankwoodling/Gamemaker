@@ -26,16 +26,14 @@
           <argument>
             <kind>1</kind>
             <string>/// Initialize variables
-
-/*
-up_key = ord(vk_up);
-down_key = ord(vk_down);
-*/
-
-score_player = 0;
-score_computer = 0;
-speed_paddle = 10;
-speed_ball = 10
+global.score_player = 0;
+global.score_computer = 0;
+global.speed_paddle = 10;
+global.speed_ball = 10;
+global.ball_min_speed_horiz = 5;
+global.ball_max_speed_horiz = 8;
+global.ball_min_speed_vert = 1;
+global.ball_max_speed_vert = 6;
 </string>
           </argument>
         </arguments>
@@ -58,8 +56,8 @@ speed_ball = 10
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check(vk_up) y -= speed_paddle;
-if keyboard_check(vk_down) y += speed_paddle;
+            <string>if keyboard_check(vk_up) y -= global.speed_paddle;
+if keyboard_check(vk_down) y += global.speed_paddle;
 
 //if place_meeting(x,y,obj_wall) y -= 5;
 y = clamp(y, (sprite_height/2)+32, room_height-(sprite_height/2)-32)

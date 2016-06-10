@@ -26,6 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>/// AI Instructions
+if(y &lt; obj_ball.y) y += global.speed_paddle
+if(y &gt; obj_ball.y) y -= global.speed_paddle
+
+y = clamp(y, (sprite_height/2)+32, room_height-(sprite_height/2)-32)
+
+
+// maybe if ball speed is negative the paddle isn't moving
 </string>
           </argument>
         </arguments>

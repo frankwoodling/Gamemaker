@@ -27,12 +27,11 @@
             <kind>1</kind>
             <string>// choose should be replaced with random
 // choose is for non-integer random selection
-hspd = choose(5, 6, 7);
-vspd = choose(2, 4, 6);
+hspd = random_range(global.ball_min_speed_horiz, global.ball_max_speed_horiz);
+vspd = random_range(global.ball_min_speed_vert, global.ball_max_speed_vert);
 
 hspeed = choose(-hspd, hspd);
 vspeed = choose(-vspd, vspd);
-
 </string>
           </argument>
         </arguments>
@@ -55,7 +54,10 @@ vspeed = choose(-vspd, vspd);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(y &lt;= sprite_height/2 + 32 || y &gt;= room_height-(sprite_height/2)- 32)
+            <string>global.ball_pos_x = x
+global.ball_pos_y = y
+
+if(y &lt;= sprite_height/2 + 32 || y &gt;= room_height-(sprite_height/2)- 32)
 {
     vspeed *= -1;
 }
@@ -68,8 +70,8 @@ if(x &lt;= 0)
     x = xstart;
     y = ystart;
     
-    hspd = choose(5, 6, 7);
-    vspd = choose(2, 4, 6);
+    hspd = random_range(global.ball_min_speed_horiz, global.ball_max_speed_horiz);
+    vspd = random_range(global.ball_min_speed_vert, global.ball_max_speed_vert);
 
     hspeed = choose(-hspd, hspd);
     vspeed = choose(-vspd, vspd);
@@ -83,12 +85,35 @@ if(x &gt;= room_width)
     x = xstart;
     y = ystart;
     
-    hspd = choose(3, 5, 7);
-    vspd = choose(2, 4, 6);
+    hspd = random_range(global.ball_min_speed_horiz, global.ball_max_speed_horiz);
+    vspd = random_range(global.ball_min_speed_vert, global.ball_max_speed_vert);
 
     hspeed = choose(-hspd, hspd);
     vspeed = choose(-vspd, vspd);
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_paddle_cpu">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>hspeed *= -1;
 </string>
           </argument>
         </arguments>
