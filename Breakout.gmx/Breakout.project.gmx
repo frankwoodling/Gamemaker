@@ -13,6 +13,9 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <fonts name="fonts">
+    <font>fonts\fnt_test</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_paddle</object>
     <object>objects\obj_block_main</object>
@@ -20,6 +23,7 @@
     <object>objects\obj_block_yellow_striped</object>
     <object>objects\obj_ball_main</object>
     <object>objects\obj_ball_red</object>
+    <object>objects\obj_debug</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_lvl_01</room>

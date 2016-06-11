@@ -27,25 +27,42 @@
             <kind>1</kind>
             <string>/// Ball Physics
 // Sides of room
-if(x &gt; room_width || x &lt; 0) hspeed *= -1
+if(x &gt; (room_width - 15) || (x + 15) &lt; 0) hspeed *= -1
 
 // Top of room
-if(y &gt; room_height|| y &lt; 0) vspeed *= -1
+if((y + 15) &gt; room_height|| (y - 15) &lt; 0) vspeed *= -1
 
 // Contact with paddle center
-if(point_in_rectangle(x, y + 15, obj_paddle.x - 16, obj_paddle.y - 8, obj_paddle.x + 16, obj_paddle.y + 8))
+if(point_in_rectangle(x, y + 15, obj_paddle.x - 48, obj_paddle.y - 24, obj_paddle.x + 48, obj_paddle.y + 24))
 {
-    obj_ball_main.vspeed *= -1;        
+    if(obj_ball_main.vspeed &gt; 0)
+    {
+        obj_ball_main.vspeed *= -1; 
+    }
+     
 }
 
 // Contact with paddle, left side
-if(point_in_rectangle(x, y + 15, obj_paddle.x - 32, obj_paddle.y - 8, obj_paddle.x - 16, obj_paddle.y + 8))
+if(point_in_rectangle(x, y + 15, obj_paddle.x - 96, obj_paddle.y - 24, obj_paddle.x - 48, obj_paddle.y + 24))
 {
-    obj_ball_main.vspeed *= -1;
-    //obj_ball_main.direction -= 35;    
+    obj_ball_main.direction -= 35;
+    if(obj_ball_main.vspeed &gt; 0)
+    {
+        obj_ball_main.vspeed *= -1; 
+    }
 }
 
-//     global.ball_launch.direction = 90;
+// Contact with paddle, right side
+if(point_in_rectangle(x, y + 15, obj_paddle.x + 48, obj_paddle.y - 24, obj_paddle.x + 96, obj_paddle.y + 24))
+{
+    if(obj_ball_main.vspeed &gt; 0)
+    {
+        obj_ball_main.direction += 35;
+        obj_ball_main.vspeed *= -1;
+    }
+}
+
+
 </string>
           </argument>
         </arguments>
