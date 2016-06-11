@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="3" enumb="0">
+    <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,50 +25,66 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Ball Physics
-// Sides of room
-if(x &gt; (room_width - 15) || (x - 15) &lt; 0) hspeed *= -1
+            <string>sys = part_system_create();
+part = part_type_create();
 
-// Top of room
-if((y + 15) &gt; room_height|| (y - 15) &lt; 0) vspeed *= -1
+part_type_sprite(part, spr_rain, 0, 0, 0);
+part_type_direction(part, 260, 280, 0, 5);
+part_type_orientation(part, 260, 280, 0, 1, 1);
+part_type_gravity(part, .5, 270);
+//part_type_life(part, 30, 60);
+part_type_alpha1(part, .5);
 
-// Contact with paddle center
-if(point_in_rectangle(x, y + 15, obj_paddle.x - 48, obj_paddle.y - 24, obj_paddle.x + 48, obj_paddle.y + 24))
-{
-    if(obj_ball_main.vspeed &gt; 0)
-    {
-        obj_ball_main.vspeed *= -1; 
-    }
-     
-}
-
-// Contact with paddle, left side
-if(point_in_rectangle(x, y + 15, obj_paddle.x - 96, obj_paddle.y - 24, obj_paddle.x - 48, obj_paddle.y + 24))
-{
-    obj_ball_main.direction -= 35;
-    if(obj_ball_main.vspeed &gt; 0)
-    {
-        obj_ball_main.vspeed *= -1; 
-    }
-}
-
-// Contact with paddle, right side
-if(point_in_rectangle(x, y + 15, obj_paddle.x + 48, obj_paddle.y - 24, obj_paddle.x + 96, obj_paddle.y + 24))
-{
-    if(obj_ball_main.vspeed &gt; 0)
-    {
-        obj_ball_main.direction += 35;
-        obj_ball_main.vspeed *= -1;
-    }
-}
+emit = part_emitter_create(sys);
+part_emitter_region(sys, emit, 0, room_width, 0, 0, ps_shape_rectangle, ps_distr_linear);
+part_emitter_stream(sys, emit, part, 10);
 
 
+
+
+// y: 320-352   x: 256-480
+
+// Part 1 Fireworks
+/*
+sys = part_system_create();
+part = part_type_create();
+
+part_type_shape(part, pt_shape_pixel);
+part_type_size(part, 1, 2, .1, .02); // 1 means it is the same size
+part_type_color2(part, c_red, c_orange);
+part_type_direction(part, 0, 360, 0, 5);
+part_type_speed(part, 5, 10, 1, .5);
+
+emit = part_emitter_create(sys);
+part_emitter_region(sys, emit, x, x, y, y, ps_shape_rectangle, ps_distr_linear);
+part_emitter_burst(sys, emit, part, 100);
+
+alarm[0] = 30;
+*/
+
+
+// Part 2: Rain
+/*
+sys = part_system_create();
+part = part_type_create();
+
+part_type_sprite(part, spr_rain, 0, 0, 0);
+part_type_direction(part, 260, 280, 0, 5);
+part_type_orientation(part, 260, 280, 0, 1, 1);
+part_type_gravity(part, .5, 270);
+//part_type_life(part, 30, 60);
+part_type_alpha1(part, .5);
+
+emit = part_emitter_create(sys);
+part_emitter_region(sys, emit, 0, room_width, 0, 0, ps_shape_rectangle, ps_distr_linear);
+part_emitter_stream(sys, emit, part, 10);
+*/
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_block_main">
+    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -85,8 +101,8 @@ if(point_in_rectangle(x, y + 15, obj_paddle.x + 48, obj_paddle.y - 24, obj_paddl
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.ball_launch.direction *= -1;
-
+            <string>part_emitter_burst(sys, emit, part, 100);
+alarm[0] = 30;
 </string>
           </argument>
         </arguments>
