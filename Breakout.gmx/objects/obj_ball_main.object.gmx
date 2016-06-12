@@ -77,6 +77,7 @@ if(point_in_rectangle(x, y + 15, obj_paddle.x - 40, obj_paddle.y - 10, obj_paddl
     if(obj_ball_main.vspeed &gt; 0)
     {
         obj_ball_main.vspeed *= -1; 
+        audio_play_sound(snd_paddle,0,0);
     }
      
 }
@@ -85,19 +86,23 @@ if(point_in_rectangle(x, y + 15, obj_paddle.x - 40, obj_paddle.y - 10, obj_paddl
 if(point_in_rectangle(x, y + 15, obj_paddle.x - 80, obj_paddle.y - 10, obj_paddle.x - 40, obj_paddle.y + 10))
 {
     obj_ball_main.direction -= 35;
+    
     if(obj_ball_main.vspeed &gt; 0)
     {
         obj_ball_main.vspeed *= -1; 
+        audio_play_sound(snd_paddle,0,0);
     }
 }
 
 // Contact with paddle, right side
 if(point_in_rectangle(x, y + 15, obj_paddle.x + 40, obj_paddle.y - 10, obj_paddle.x + 80, obj_paddle.y + 10))
 {
+    obj_ball_main.direction += 35;
+    
     if(obj_ball_main.vspeed &gt; 0)
-    {
-        obj_ball_main.direction += 35;
-        obj_ball_main.vspeed *= -1;
+    {        
+        obj_ball_main.vspeed *= -1
+        audio_play_sound(snd_paddle,0,0);
     }
 }
 
@@ -129,6 +134,7 @@ part_particles_create(Sname,x ,y,particle1,10);
           <argument>
             <kind>1</kind>
             <string>global.ball_launch.direction *= -1;
+audio_play_sound(snd_block,0,0);
 
 </string>
           </argument>

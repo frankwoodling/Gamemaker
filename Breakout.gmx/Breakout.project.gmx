@@ -4,7 +4,10 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_block</sound>
+    <sound>sound\snd_paddle</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_paddle_blue_old</sprite>
     <sprite>sprites\spr_block_orange_striped</sprite>
@@ -16,22 +19,34 @@
     <sprite>sprites\spr_block_red</sprite>
     <sprite>sprites\spr_block_green</sprite>
     <sprite>sprites\spr_ball_red</sprite>
+    <sprite>sprites\spr_cursor</sprite>
+    <sprites name="Menu">
+      <sprite>sprites\spr_title</sprite>
+      <sprite>sprites\spr_menu_startgame</sprite>
+      <sprite>sprites\spr_menu_options</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_teal_textured</background>
     <background>background\bg_teal_grad</background>
+    <background>background\bg_menu_start</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scr_menu_buttons.gml</script>
+  </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_test</font>
+    <font>fonts\fnt_large</font>
+    <font>fonts\fnt_medium</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_paddle</object>
     <object>objects\obj_ball_main</object>
     <object>objects\obj_ball_red</object>
-    <object>objects\obj_debug</object>
     <object>objects\particle_main</object>
     <object>objects\obj_paddle_red</object>
+    <object>objects\obj_cursor</object>
     <objects name="Blocks">
       <object>objects\obj_block_main</object>
       <object>objects\obj_block_blue</object>
@@ -41,11 +56,17 @@
       <object>objects\obj_block_orange_striped</object>
       <object>objects\obj_block_blue_striped</object>
     </objects>
+    <objects name="Text">
+      <object>objects\obj_debug</object>
+      <object>objects\obj_menu_start_title</object>
+      <object>objects\obj_menu_startgame</object>
+      <object>objects\obj_menu_start_options</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_menu_start</room>
     <room>rooms\rm_lvl_01</room>
     <room>rooms\rm_lvl_02</room>
-    <room>rooms\room2</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

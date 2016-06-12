@@ -65,6 +65,7 @@ part_type_blend(particle1,1);
           <argument>
             <kind>1</kind>
             <string>// destroy blocks hit by ball
+// audio_play_sound(snd_block);
 part_particles_create(Sname,x,y,particle1,50);
 instance_destroy();
 
