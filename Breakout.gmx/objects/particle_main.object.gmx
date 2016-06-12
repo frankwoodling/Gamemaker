@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>spr_ball_red</maskName>
+  <maskName>spr_ball_red_old</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -63,7 +63,8 @@ part_type_blend(particle1,1);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>part_particles_create(Sname,obj_ball_main.x,obj_ball_main.y,particle1,50);
+            <string>// put object back in room to test particles
+//part_particles_create(Sname,obj_ball_main.x,obj_ball_main.y,particle1,50);
 </string>
           </argument>
         </arguments>

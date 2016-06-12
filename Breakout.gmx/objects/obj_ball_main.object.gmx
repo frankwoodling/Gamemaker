@@ -72,7 +72,7 @@ if(x &gt; (room_width - 15) || (x - 15) &lt; 0) hspeed *= -1
 if((y + 15) &gt; room_height|| (y - 15) &lt; 0) vspeed *= -1
 
 // Contact with paddle center
-if(point_in_rectangle(x, y + 15, obj_paddle.x - 48, obj_paddle.y - 24, obj_paddle.x + 48, obj_paddle.y + 24))
+if(point_in_rectangle(x, y + 15, obj_paddle.x - 40, obj_paddle.y - 10, obj_paddle.x + 40, obj_paddle.y + 10))
 {
     if(obj_ball_main.vspeed &gt; 0)
     {
@@ -82,7 +82,7 @@ if(point_in_rectangle(x, y + 15, obj_paddle.x - 48, obj_paddle.y - 24, obj_paddl
 }
 
 // Contact with paddle, left side
-if(point_in_rectangle(x, y + 15, obj_paddle.x - 96, obj_paddle.y - 24, obj_paddle.x - 48, obj_paddle.y + 24))
+if(point_in_rectangle(x, y + 15, obj_paddle.x - 80, obj_paddle.y - 10, obj_paddle.x - 40, obj_paddle.y + 10))
 {
     obj_ball_main.direction -= 35;
     if(obj_ball_main.vspeed &gt; 0)
@@ -92,7 +92,7 @@ if(point_in_rectangle(x, y + 15, obj_paddle.x - 96, obj_paddle.y - 24, obj_paddl
 }
 
 // Contact with paddle, right side
-if(point_in_rectangle(x, y + 15, obj_paddle.x + 48, obj_paddle.y - 24, obj_paddle.x + 96, obj_paddle.y + 24))
+if(point_in_rectangle(x, y + 15, obj_paddle.x + 40, obj_paddle.y - 10, obj_paddle.x + 80, obj_paddle.y + 10))
 {
     if(obj_ball_main.vspeed &gt; 0)
     {
@@ -102,6 +102,7 @@ if(point_in_rectangle(x, y + 15, obj_paddle.x + 48, obj_paddle.y - 24, obj_paddl
 }
 
 // Create particle trail
+part_type_color1(particle1, c_red);
 part_particles_create(Sname,x ,y,particle1,10);
 
 
