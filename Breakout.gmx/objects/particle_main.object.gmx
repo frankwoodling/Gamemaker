@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>spr_ball_red</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -25,20 +25,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Add particle trail for ball
-Sname=part_system_create();
+            <string>Sname=part_system_create();
 particle1=part_type_create();
 
 part_type_shape(particle1,pt_shape_pixel);
 part_type_size(particle1,1,2,0,0);
 part_type_speed(particle1,2,1,0,0);
-part_type_direction(particle1,0,45,0,10); // 0 to 359 looks ok
+part_type_direction(particle1,0,359,0,10);
 part_type_orientation(particle1,0,0,0,0,0);
 part_type_color1(particle1,4227327);
-part_type_alpha1(particle1,.5);
+part_type_alpha1(particle1,1);
 part_type_scale(particle1,1,1);
 part_type_gravity(particle1,0.01,270);
-part_type_life(particle1,20,25);
+part_type_life(particle1,20,40);
 part_type_blend(particle1,1);
 
 
@@ -47,7 +46,7 @@ part_type_blend(particle1,1);
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="6" enumb="50">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -64,71 +63,7 @@ part_type_blend(particle1,1);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Ball Physics
-// Sides of room
-if(x &gt; (room_width - 15) || (x - 15) &lt; 0) hspeed *= -1
-
-// Top of room
-if((y + 15) &gt; room_height|| (y - 15) &lt; 0) vspeed *= -1
-
-// Contact with paddle center
-if(point_in_rectangle(x, y + 15, obj_paddle.x - 48, obj_paddle.y - 24, obj_paddle.x + 48, obj_paddle.y + 24))
-{
-    if(obj_ball_main.vspeed &gt; 0)
-    {
-        obj_ball_main.vspeed *= -1; 
-    }
-     
-}
-
-// Contact with paddle, left side
-if(point_in_rectangle(x, y + 15, obj_paddle.x - 96, obj_paddle.y - 24, obj_paddle.x - 48, obj_paddle.y + 24))
-{
-    obj_ball_main.direction -= 35;
-    if(obj_ball_main.vspeed &gt; 0)
-    {
-        obj_ball_main.vspeed *= -1; 
-    }
-}
-
-// Contact with paddle, right side
-if(point_in_rectangle(x, y + 15, obj_paddle.x + 48, obj_paddle.y - 24, obj_paddle.x + 96, obj_paddle.y + 24))
-{
-    if(obj_ball_main.vspeed &gt; 0)
-    {
-        obj_ball_main.direction += 35;
-        obj_ball_main.vspeed *= -1;
-    }
-}
-
-// Create particle trail
-part_particles_create(Sname,x ,y,particle1,10);
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_block_main">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>global.ball_launch.direction *= -1;
-
+            <string>part_particles_create(Sname,obj_ball_main.x,obj_ball_main.y,particle1,50);
 </string>
           </argument>
         </arguments>

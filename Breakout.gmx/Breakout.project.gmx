@@ -7,7 +7,7 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_paddle_blue</sprite>
-    <sprite>sprites\spr_block_yellow_striped</sprite>
+    <sprite>sprites\spr_block_orange_striped</sprite>
     <sprite>sprites\spr_block_blue_striped</sprite>
     <sprite>sprites\spr_ball_red</sprite>
   </sprites>
@@ -20,10 +20,11 @@
     <object>objects\obj_paddle</object>
     <object>objects\obj_block_main</object>
     <object>objects\obj_block_blue_striped</object>
-    <object>objects\obj_block_yellow_striped</object>
+    <object>objects\obj_block_orange_striped</object>
     <object>objects\obj_ball_main</object>
     <object>objects\obj_ball_red</object>
     <object>objects\obj_debug</object>
+    <object>objects\particle_main</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_lvl_01</room>

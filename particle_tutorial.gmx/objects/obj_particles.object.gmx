@@ -28,21 +28,49 @@
             <string>sys = part_system_create();
 part = part_type_create();
 
-part_type_sprite(part, spr_rain, 0, 0, 0);
-part_type_direction(part, 260, 280, 0, 5);
-part_type_orientation(part, 260, 280, 0, 1, 1);
-part_type_gravity(part, .5, 270);
-//part_type_life(part, 30, 60);
-part_type_alpha1(part, .5);
+
+
+part_type_shape(part,pt_shape_square);
+part_type_size(part,0.10,0.10,0,0);
+part_type_scale(part,2.92,3.64);
+part_type_color3(part,15570064,8460869,12554910);
+part_type_alpha3(part,0.77,0.55,0.10);
+part_type_speed(part,2.42,4.20,-0.08,0);
+part_type_direction(part,0,359,0,0);
+part_type_gravity(part,0,270);
+part_type_orientation(part,0,0,0,0,1);
+part_type_blend(part,1);
+part_type_life(part,69,73);
+emitter1 = part_emitter_create(sys);
+part_emitter_region(sys,emitter1,x,x,y,y,ps_shape_ellipse,1);
+part_emitter_stream(sys,emitter1,part,5);
+
+
+
+
+
+// Test with part 1
+/*
+sys = part_system_create();
+part = part_type_create();
+
+part_type_shape(part, pt_shape_pixel);
+part_type_size(part, .5, 1.5, .1, .02); // 1 means it is the same size
+part_type_color2(part, c_red, c_yellow);
+part_type_direction(part, 0, 360, 0, 5);
+part_type_speed(part, 1, 2, 1, .5);
+part_type_life(part, 15, 20);
+
 
 emit = part_emitter_create(sys);
-part_emitter_region(sys, emit, 0, room_width, 0, 0, ps_shape_rectangle, ps_distr_linear);
-part_emitter_stream(sys, emit, part, 10);
+part_emitter_region(sys, emit, x, x, y, y, ps_shape_ellipse, ps_distr_gaussian);
+part_emitter_burst(sys, emit, part, 50);
+
+alarm[0] = 60;
+*/
 
 
 
-
-// y: 320-352   x: 256-480
 
 // Part 1 Fireworks
 /*
@@ -63,7 +91,28 @@ alarm[0] = 30;
 */
 
 
+
 // Part 2: Rain
+/*
+sys = part_system_create();
+part = part_type_create();
+
+part_type_sprite(part, spr_rain, 0, 0, 0);
+part_type_direction(part, 260, 280, 0, 5);
+part_type_orientation(part, 260, 280, 0, 1, 1);
+part_type_gravity(part, .5, 270);
+//part_type_life(part, 30, 60);
+part_type_alpha1(part, .5);
+
+emit = part_emitter_create(sys);
+part_emitter_region(sys, emit, 0, room_width, 0, 0, ps_shape_rectangle, ps_distr_linear);
+part_emitter_stream(sys, emit, part, 10);
+*/
+
+
+
+
+// Part 3 Wand
 /*
 sys = part_system_create();
 part = part_type_create();
