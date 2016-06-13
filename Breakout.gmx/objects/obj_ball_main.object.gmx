@@ -69,7 +69,16 @@ part_type_blend(particle1,1);
 if(x &gt; (room_width - 15) || (x - 15) &lt; 0) hspeed *= -1
 
 // Top of room
-if((y + 15) &gt; room_height|| (y - 15) &lt; 0) vspeed *= -1
+if((y - 15) &lt; 0) vspeed *= -1
+// if((y + 15) &gt; room_height|| (y - 15) &lt; 0) vspeed *= -1
+
+// Bottom of room
+if((y + 15) &gt; room_height)
+{
+    global.lives -= 1;
+    global.ball_launched = false;
+    instance_destroy();
+}
 
 // Contact with paddle center
 if(point_in_rectangle(x, y + 15, obj_paddle.x - 40, obj_paddle.y - 10, obj_paddle.x + 40, obj_paddle.y + 10))
@@ -91,6 +100,11 @@ if(point_in_rectangle(x, y + 15, obj_paddle.x - 80, obj_paddle.y - 10, obj_paddl
         obj_ball_main.vspeed *= -1; 
         audio_play_sound(snd_paddle,0,0);
     }
+    
+    if(obj_ball_main.direction &gt;= 165 &amp;&amp; obj_ball_main.direction &lt;= 190)
+    {
+        obj_ball_main.direction = 165;
+    }
 }
 
 // Contact with paddle, right side
@@ -103,12 +117,27 @@ if(point_in_rectangle(x, y + 15, obj_paddle.x + 40, obj_paddle.y - 10, obj_paddl
         obj_ball_main.vspeed *= -1
         audio_play_sound(snd_paddle,0,0);
     }
+    
+    if(obj_ball_main.direction &gt;= 0 &amp;&amp; obj_ball_main.direction &lt;= 15)
+    {
+        obj_ball_main.direction = 15;
+    }
+    
+    if(obj_ball_main.direction &gt;= 345 &amp;&amp; obj_ball_main.direction &lt;= 360)
+    {
+        obj_ball_main.direction = 15;
+    }
 }
 
 // Create particle trail
 part_type_color1(particle1, c_red);
 part_particles_create(Sname,x ,y,particle1,10);
 
+// Remove ball if all blocks destroyed
+if(instance_number(obj_block_main) == 0)
+{
+    instance_destroy();
+}
 
 </string>
           </argument>

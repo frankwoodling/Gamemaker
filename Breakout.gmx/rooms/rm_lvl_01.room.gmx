@@ -112,9 +112,9 @@
     <instance objName="obj_block_green" x="864" y="150" name="inst_9C977F1A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block_green" x="952" y="150" name="inst_BE347230" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_block_green" x="1040" y="150" name="inst_6183B363" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_win_text" x="760" y="50" name="inst_D7FA13C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_cursor_remove" x="72" y="80" name="inst_216E2882" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_text_lvl_01" x="40" y="80" name="inst_1C59CA43" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_life_count" x="104" y="80" name="inst_ABE5FA81" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

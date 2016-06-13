@@ -15,12 +15,20 @@
   <paths name="paths">
     <path>paths\pth_lvl_one</path>
   </paths>
+  <fonts name="fonts">
+    <font>fonts\fnt_hud</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_enemy</object>
     <object>objects\obj_dirt</object>
     <object>objects\obj_tower</object>
     <object>objects\obj_orb</object>
+    <object>objects\obj_wave_control</object>
+    <object>objects\obj_stats</object>
   </objects>
+  <timelines name="timelines">
+    <timeline>timelines\tm_lvl_one</timeline>
+  </timelines>
   <rooms name="rooms">
     <room>rooms\rm_lvl_one</room>
   </rooms>

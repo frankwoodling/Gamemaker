@@ -35,7 +35,6 @@ paddle_speed =  10;
 ball_type = obj_ball_red;
 global.ball_launched = false;
 
-
 </string>
           </argument>
         </arguments>
@@ -65,7 +64,48 @@ if keyboard_check(vk_right) x += paddle_speed;
 //if place_meeting(x,y,obj_wall) y -= 5;
 x = clamp(x, 0 + sprite_width/2, room_width-sprite_width/2)
 
-sprite_index = spr_paddle_red;
+// Remove paddle if all blocks cleared
+if(instance_number(obj_block_main) == 0)
+{
+    instance_destroy();
+}
+
+
+
+
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Display instructions
+if(global.ball_launched == false &amp;&amp; instance_number(obj_block_main) &gt; 0)
+{
+    draw_set_halign(fa_center)
+    draw_set_valign(fa_middle);
+    draw_set_color(c_white);
+    draw_set_font(fnt_test);
+    draw_text(room_width/2, room_height/2, "Press space to launch ball.");       
+}
 </string>
           </argument>
         </arguments>
@@ -119,6 +159,7 @@ if(global.ball_launched == false)
     global.ball_launch.speed = 10;
     global.ball_launched = true
 }
+
 
 </string>
           </argument>

@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="8" enumb="64">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,38 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Display message if level completed
-if(instance_number(obj_block_main) == 0)
+            <string>if(instance_number(obj_block_main) == 0)
 {
     draw_text(room_width/2, room_height/2, 'You won.  Press space to continue.');
+    room_goto(rm_lvl_03);
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="32">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// If level is completed, press space to continue
-if(instance_number(obj_block_main) == 0)
-{
-    room_goto(rm_lvl_02)
-}
+
+
 </string>
           </argument>
         </arguments>

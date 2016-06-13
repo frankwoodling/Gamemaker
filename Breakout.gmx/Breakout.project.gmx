@@ -64,8 +64,9 @@
       <object>objects\obj_menu_startgame</object>
       <object>objects\obj_menu_options</object>
       <object>objects\obj_menu_exit</object>
-      <object>objects\obj_win_text</object>
       <object>objects\obj_text_lvl_01</object>
+      <object>objects\obj_life_count</object>
+      <object>objects\obj_text_lvl_02</object>
     </objects>
   </objects>
   <rooms name="rooms">
