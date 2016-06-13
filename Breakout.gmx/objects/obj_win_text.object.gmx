@@ -29,7 +29,7 @@
 draw_set_valign(fa_middle);
 draw_set_color(c_white);
 draw_set_font(fnt_test);
-draw_text(room_width/2, 50, 'x: ' + string(obj_cursor.x) + '  ' + 'y: ' + string(obj_cursor.y));
+//draw_text(room_width/2, 50, 'x: ' + string(obj_cursor.x) + '  ' + 'y: ' + string(obj_cursor.y));
 draw_text(room_width/2, 80, 'blocks rem: '+ string(instance_number(obj_block_main)));
 
 if(instance_number(obj_block_main) &lt; 55)

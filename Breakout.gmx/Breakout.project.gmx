@@ -24,6 +24,7 @@
       <sprite>sprites\spr_title</sprite>
       <sprite>sprites\spr_menu_startgame</sprite>
       <sprite>sprites\spr_menu_options</sprite>
+      <sprite>sprites\spr_menu_exit</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -58,9 +59,11 @@
     </objects>
     <objects name="Text">
       <object>objects\obj_debug</object>
-      <object>objects\obj_menu_start_title</object>
+      <object>objects\obj_menu_title</object>
       <object>objects\obj_menu_startgame</object>
-      <object>objects\obj_menu_start_options</object>
+      <object>objects\obj_menu_options</object>
+      <object>objects\obj_menu_exit</object>
+      <object>objects\obj_win_text</object>
     </objects>
   </objects>
   <rooms name="rooms">
