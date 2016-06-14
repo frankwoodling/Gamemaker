@@ -47,6 +47,7 @@
     <object>objects\obj_ball_red</object>
     <object>objects\particle_main</object>
     <object>objects\obj_paddle_red</object>
+    <object>objects\obj_paddle_blue_old</object>
     <object>objects\obj_cursor</object>
     <object>objects\obj_cursor_remove</object>
     <objects name="Blocks">
@@ -67,7 +68,9 @@
       <object>objects\obj_text_lvl_01</object>
       <object>objects\obj_life_count</object>
       <object>objects\obj_text_lvl_02</object>
+      <object>objects\obj_options</object>
     </objects>
+    <object>objects\object23</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_menu_start</room>
